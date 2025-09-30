@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Typography, useTheme } from '@mui/material';
+import { Button, Typography, useTheme, Stack, Box } from '@mui/material';
 import DynamicFormModal from '@/components/modals/DynamicFormModal';
 import ForgotPasswordModal from '@/components/modals/ForgotPasswordModal';
 import {useForm} from "react-hook-form";
@@ -79,15 +79,15 @@ function LoginModal({ setOpenLogin, openLogin }: LoginModalProps) {
                 ]}
                 onSubmit={handleLoginSubmit}
                 extraComponents={
-                    <div className="flex flex-col items-center gap-2 w-full">
+                    <Stack spacing={1} alignItems="center" sx={{ width: '100%', mt: 1 }}>
                         <Typography
                             component="button"
+                            type="button"
                             onClick={() => {
                                 setOpenLogin(false);
                                 setOpenForgot(true);
                             }}
                             sx={{
-                                mt: 1,
                                 color: 'gray',
                                 textDecoration: 'underline',
                                 cursor: 'pointer',
@@ -95,23 +95,34 @@ function LoginModal({ setOpenLogin, openLogin }: LoginModalProps) {
                                 border: 'none',
                                 p: 0,
                                 fontSize: '0.875rem',
-                                textAlign: 'left',
                             }}
                         >
                             {t('forgot_password_modal.title')}
                         </Typography>
 
                         {isSuccess && (
-                            <p className="text-green-500 text-sm">
+                            <Typography 
+                                sx={{ 
+                                    color: 'success.main', 
+                                    fontSize: '0.875rem',
+                                    textAlign: 'center',
+                                }}
+                            >
                                 {t('login_modal.isSuccess')}
-                            </p>
+                            </Typography>
                         )}
                         {isError && (
-                            <p className="text-red-500 text-sm">
+                            <Typography 
+                                sx={{ 
+                                    color: 'error.main', 
+                                    fontSize: '0.875rem',
+                                    textAlign: 'center',
+                                }}
+                            >
                                 {t('login_modal.isError')}
-                            </p>
+                            </Typography>
                         )}
-                    </div>
+                    </Stack>
                 }
             />
 

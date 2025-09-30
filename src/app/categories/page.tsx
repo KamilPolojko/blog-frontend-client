@@ -66,31 +66,37 @@ export default function Categories() {
             </Typography>
 
             <Autocomplete
-                multiple
-                freeSolo
-                options={categories}
-                value={selectedCategories}
-                onChange={(_event, newValue) => setSelectedCategories(newValue)}
-                renderValue={(selected) => (
-                    <>
-                        {selected.map((option: string) => (
-                            <Chip key={option} variant="outlined" label={option} sx={{ mr: 0.5 }} />
-                        ))}
-                    </>
-                )}
-                renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        variant="outlined"
-                        label="Wybierz kategorie / dodaj tag"
-                        placeholder="np. Technology, AI..."
-                    />
-                )}
-                sx={{
-                    width: { xs: 200, sm: 400, md: 600 },
-                    mx: "auto",
-                }}
-            />
+    multiple
+    freeSolo
+    options={categories}
+    value={selectedCategories}
+    onChange={(_event, newValue) => setSelectedCategories(newValue)}
+    renderTags={(value, getTagProps) => (
+        <>
+            {value.map((option: string, index: number) => (
+                <Chip 
+                    key={option} 
+                    variant="outlined" 
+                    label={option} 
+                    sx={{ mr: 0.5 }} 
+                    {...getTagProps({ index })}
+                />
+            ))}
+        </>
+    )}
+    renderInput={(params) => (
+        <TextField
+            {...params}
+            variant="outlined"
+            label="Wybierz kategorie / dodaj tag"
+            placeholder="np. Technology, AI..."
+        />
+    )}
+    sx={{
+        width: { xs: 200, sm: 400, md: 600 },
+        mx: "auto",
+    }}
+/>
 
             <Box
                 sx={{

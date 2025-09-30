@@ -22,7 +22,7 @@ const EditCommentFormBase = ({
     if(!ready) return null;
     return (
         <Box sx={{ mb: 2 }}>
-            <form onSubmit={handleSubmit((data) => onSubmit(data.content))}>
+            <form onSubmit={handleSubmit((data: EditFormData) => onSubmit(data.content))}>
                 <TextField
                     {...register("content", { required: true })}
                     multiline

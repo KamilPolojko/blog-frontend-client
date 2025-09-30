@@ -4,7 +4,10 @@ import {
     Accordion,
     AccordionSummary,
     AccordionDetails,
-    Typography, useTheme,
+    Typography,
+    useTheme,
+    Box,
+    Stack,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
@@ -30,34 +33,63 @@ function Footer() {
     ];
 
     if(!ready) return null;
+    
     return (
-        <footer
-            style={{
+        <Box
+            component="footer"
+            sx={{
                 backgroundColor: theme.palette.background.paper,
                 color: theme.palette.text.primary,
                 boxShadow: `0 -4px 10px ${theme.palette.mode === 'light' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.2)'}`,
-                padding: '16px 0',
+                py: 2,
             }}
         >
-            <div className="container mx-auto px-2">
+            <Box
+                sx={{
+                    maxWidth: 'xl',
+                    mx: 'auto',
+                    px: 2,
+                }}
+            >
                 {isDesktop ? (
-                    <div className="flex flex-row justify-center items-start gap-8">
+                    <Stack
+                        direction="row"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={1}
+                        sx={{
+                            width: '100%',
+                            maxWidth: '1200px',
+                            mx: 'auto',
+                        }}
+                    >
                         {footerData.map(({ title, items }, idx) => (
-                            <div
+                            <Stack
                                 key={idx}
-                                className="flex flex-col gap-2 flex-shrink-0 text-left p-3 rounded"
+                                spacing={1}
+                                sx={{
+                                    textAlign: 'center',
+                                    p: 2,
+                                    flex: '1 1 0',
+                                    maxWidth: '300px',
+                                }}
                             >
-                                <span className="text-lg font-bold">
+                                <Typography
+                                    sx={{
+                                        fontSize: '1.125rem',
+                                        fontWeight: 'bold',
+                                    }}
+                                >
                                     {title}
-                                </span>
+                                </Typography>
                                 {items.map((item, i) => (
-                                    <span key={i}>{item}</span>
+                                    <Typography key={i}>{item}</Typography>
                                 ))}
-                            </div>
+                            </Stack>
                         ))}
-                    </div>
+                    </Stack>
                 ) : (
-                    <div>
+                    <Box>
                         {footerData.map(({ title, items }, idx) => (
                             <Accordion
                                 key={idx}
@@ -82,19 +114,18 @@ function Footer() {
                                     </Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <div className="flex flex-col gap-2 text-left">
+                                    <Stack spacing={1} sx={{ textAlign: 'left' }}>
                                         {items.map((item, i) => (
-                                            <span key={i}>{item}</span>
+                                            <Typography key={i}>{item}</Typography>
                                         ))}
-                                    </div>
+                                    </Stack>
                                 </AccordionDetails>
                             </Accordion>
-
                         ))}
-                    </div>
+                    </Box>
                 )}
-            </div>
-        </footer>
+            </Box>
+        </Box>
     );
 }
 

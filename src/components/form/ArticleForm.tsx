@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { Box, Button, FormControlLabel, Switch, TextField, Typography } from "@mui/material";
+import { Box, Button, FormControlLabel, Switch, TextField, Typography, Stack } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import FormField from "@/components/form/FormField";
 import FormRichTextField from "@/components/form/RichTextField/FormRichTextField";
@@ -57,13 +57,47 @@ export default function ArticleForm({
 
     if(!ready) return null;
     return (
-        <Box sx={{ mx: "auto", mt: 5, mb: 5, maxWidth: 900, bgcolor: "background.paper", borderRadius: 2, boxShadow: 3, p: 4 }}>
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4" autoComplete="off">
-                <FormField name="title" label={t('form_fields.title.label')} control={control} rules={{ required: t('form_fields.title.errors.required'), maxLength: { value: 100, message: t('form_fields.title.errors.maxLength.message') } }} />
+        <Box sx={{ 
+            mx: "auto", 
+            mt: 5, 
+            mb: 5, 
+            maxWidth: 900, 
+            bgcolor: "background.paper", 
+            borderRadius: 2, 
+            boxShadow: 3, 
+            p: 4 
+        }}>
+            <Box 
+                component="form" 
+                onSubmit={handleSubmit(onSubmit)} 
+                autoComplete="off"
+                sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+            >
+                <FormField 
+                    name="title" 
+                    label={t('form_fields.title.label')} 
+                    control={control} 
+                    rules={{ 
+                        required: t('form_fields.title.errors.required'), 
+                        maxLength: { value: 100, message: t('form_fields.title.errors.maxLength.message') } 
+                    }} 
+                />
 
-                <FormRichTextField name="content" control={control} label={t('form_fields.article_content.label')} placeholder={t('form_fields.article_content.placeholder')} rules={{ required: t('form_fields.article_content.errors.required') }} />
+                <FormRichTextField 
+                    name="content" 
+                    control={control} 
+                    label={t('form_fields.article_content.label')} 
+                    placeholder={t('form_fields.article_content.placeholder')} 
+                    rules={{ required: t('form_fields.article_content.errors.required') }} 
+                />
 
-                <FormRichTextField name="description" control={control} label={t('form_fields.description.label')} placeholder={t('form_fields.description.placeholder')} rules={{ required: t('form_fields.description.errors.required') }} />
+                <FormRichTextField 
+                    name="description" 
+                    control={control} 
+                    label={t('form_fields.description.label')} 
+                    placeholder={t('form_fields.description.placeholder')} 
+                    rules={{ required: t('form_fields.description.errors.required') }} 
+                />
 
                 <FormField
                     name="categories"
@@ -78,11 +112,18 @@ export default function ArticleForm({
                             options={allCategories}
                             value={field.value || []}
                             onChange={(_, newValue) => field.onChange(newValue)}
-                            renderInput={(params) => <TextField {...params} label={t('form_fields.categories.label')} placeholder={t('form_fields.categories.placeholder')} error={!!fieldState.error} helperText={fieldState.error?.message} />}
+                            renderInput={(params) => (
+                                <TextField 
+                                    {...params} 
+                                    label={t('form_fields.categories.label')} 
+                                    placeholder={t('form_fields.categories.placeholder')} 
+                                    error={!!fieldState.error} 
+                                    helperText={fieldState.error?.message} 
+                                />
+                            )}
                         />
                     )}
                 />
-
 
                 <Controller
                     name="image"
@@ -91,8 +132,10 @@ export default function ArticleForm({
                         required: !previewImage ? t('form_fields.preview_image.errors.required') : false,
                     }}
                     render={({ field, fieldState }) => (
-                        <div className="flex flex-col gap-2 items-center w-full">
-                            <Typography fontWeight={600}>{t('form_fields.preview_image.typography')}</Typography>
+                        <Stack spacing={1} alignItems="center" sx={{ width: '100%' }}>
+                            <Typography fontWeight={600}>
+                                {t('form_fields.preview_image.typography')}
+                            </Typography>
                             <ArticleImagePreview
                                 previewImage={previewImage}
                                 setPreviewImage={setPreviewImage}
@@ -121,12 +164,20 @@ export default function ArticleForm({
                                     mt: 2,
                                 }}
                             />
-                        </div>
+                        </Stack>
                     )}
                 />
 
-
-                <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: 3, mt: 2, p: 3, borderRadius: 2, border: "1px solid", borderColor: "grey.200" }}>
+                <Box sx={{ 
+                    display: "flex", 
+                    flexDirection: { xs: "column", md: "row" }, 
+                    gap: 3, 
+                    mt: 2, 
+                    p: 3, 
+                    borderRadius: 2, 
+                    border: "1px solid", 
+                    borderColor: "grey.200" 
+                }}>
                     <Box sx={{ flex: 1 }}>
                         <FormField
                             name="isActive"
@@ -166,14 +217,21 @@ export default function ArticleForm({
                             name="readingTime"
                             label={t('form_fields.reading_time.label')}
                             control={control}
-                            rules={{ required: t('form_fields.reading_time.errors.required'), min: { value: 1, message: t('form_fields.reading_time.errors.min') }, max: { value: 300, message: t('form_fields.reading_time.errors.max') } }}
+                            rules={{ 
+                                required: t('form_fields.reading_time.errors.required'), 
+                                min: { value: 1, message: t('form_fields.reading_time.errors.min') }, 
+                                max: { value: 300, message: t('form_fields.reading_time.errors.max') } 
+                            }}
                             render={({ field, fieldState }) => (
                                 <TextField
                                     {...field}
                                     label={t('form_fields.reading_time.second_label')}
                                     type="number"
                                     fullWidth
-                                    slotProps={{ htmlInput: { min: 1, max: 300, step: 1 }, inputLabel: { shrink: true } }}
+                                    slotProps={{ 
+                                        htmlInput: { min: 1, max: 300, step: 1 }, 
+                                        inputLabel: { shrink: true } 
+                                    }}
                                     helperText={fieldState.error?.message || t('form_fields.reading_time.helper_text')}
                                     error={!!fieldState.error}
                                     sx={{ "& .MuiInputLabel-root": { fontWeight: 600 } }}
@@ -193,7 +251,6 @@ export default function ArticleForm({
                             label={t('form_fields.created_at.label')}
                             value={field.value ? dayjs(field.value) : null}
                             onChange={(date) => field.onChange(date ? date.toDate() : null)}
-                            enableAccessibleFieldDOMStructure={false}
                             slots={{ textField: TextField }}
                             slotProps={{
                                 textField: {
@@ -211,11 +268,19 @@ export default function ArticleForm({
                     )}
                 />
 
-
                 <Button
                     type="submit"
                     variant="contained"
-                    sx={{ mt: 2, width: "100%", borderRadius: "24px", fontWeight: "bold", bgcolor: "black", color: "white", py: 1.5, "&:hover": { bgcolor: "gray.800" } }}
+                    sx={{ 
+                        mt: 2, 
+                        width: "100%", 
+                        borderRadius: "24px", 
+                        fontWeight: "bold", 
+                        bgcolor: "black", 
+                        color: "white", 
+                        py: 1.5, 
+                        "&:hover": { bgcolor: "gray.800" } 
+                    }}
                     disabled={isPending || !formState.isDirty}
                 >
                     {isPending ? t('article_form.isPending') : submitLabel}
@@ -231,7 +296,7 @@ export default function ArticleForm({
                         {t('article_form.isError')}
                     </Typography>
                 )}
-            </form>
+            </Box>
         </Box>
     );
 }

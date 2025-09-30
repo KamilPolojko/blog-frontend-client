@@ -7,6 +7,7 @@ import {useRegister} from "@/hooks/auth/useRegister";
 import {useForm} from "react-hook-form";
 import { RegisterRequest } from '@/types/AuthTypes';
 import { useTranslation } from 'react-i18next';
+import { Box, Typography } from '@mui/material';
 
 interface RegistrationModalProps {
     setOpenLogin: (openLogin: boolean) => void;
@@ -116,30 +117,44 @@ function RegisterModal({ setOpenLogin }: RegistrationModalProps) {
                 ]}
                 onSubmit={handleRegisterSubmit}
                 extraComponents={
-                    <div className="flex flex-col items-center gap-2">
-                        <button
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
+                        <Button
                             type="button"
-                            className="mt-2 text-gray-500 hover:text-black text-sm"
                             onClick={() => {
                                 setOpenRegister(false);
                                 setOpenLogin(true);
                             }}
+                            sx={{
+                                mt: 1,
+                                color: 'gray',
+                                textDecoration: 'underline',
+                                cursor: 'pointer',
+                                background: 'none',
+                                border: 'none',
+                                p: 0,
+                                fontSize: '0.875rem',
+                                textTransform: 'none',
+                                '&:hover': {
+                                    color: 'black',
+                                    background: 'none',
+                                },
+                            }}
                         >
                             {t('button.log_in')}
-                        </button>
-
+                        </Button>
+                
                         {isSuccess && (
-                            <p className="text-green-500 text-sm mt-1">
+                            <Typography variant="caption" sx={{ color: 'success.main', mt: 1 }}>
                                 {t('registration_modal.isSuccess')}
-                            </p>
+                            </Typography>
                         )}
-
+                
                         {isError && (
-                            <p className="text-red-500 text-sm mt-1">
+                            <Typography variant="caption" sx={{ color: 'error.main', mt: 1 }}>
                                 {t('registration_modal.isError')}
-                            </p>
+                            </Typography>
                         )}
-                    </div>
+                    </Box>
                 }
             />
         </>

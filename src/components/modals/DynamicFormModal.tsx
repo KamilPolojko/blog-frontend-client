@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { Modal, Fade, Box, Typography, IconButton, Button } from '@mui/material';
+import { Modal, Fade, Box, Typography, IconButton, Button, Stack } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { DynamicFormModalStatelessProps, FieldConfig } from '@/types/dynamicFormTypes';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
 import FormRichTextField from '@/components/form/RichTextField/FormRichTextField';
+import { TextField } from '@mui/material';
 
 const modalStyle = {
     position: 'absolute' as const,
@@ -90,7 +91,7 @@ export default function DynamicFormModal({
                         {title}
                     </Typography>
 
-                    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+                    <Stack component="form" onSubmit={handleSubmit(onSubmit)} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                         {fields.map(({ name, label, type = 'text', placeholder, validation }, idx) => {
                             if (type === 'richtext') {
                                 return (
@@ -106,21 +107,27 @@ export default function DynamicFormModal({
                             }
 
                             return (
-                                <Box key={idx} className="flex flex-col gap-1">
-                                    <label htmlFor={name} className="font-semibold">{label}</label>
-                                    <input
-                                        id={name}
-                                        type={type}
-                                        placeholder={placeholder}
-                                        {...register(name, enhanceValidation({ name, label, validation }))}
-                                        className="w-full bg-white text-black border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-                                    />
-                                    {errors[name] && (
-                                        <Typography variant="caption" sx={{ color: theme.palette.error.main }}>
-                                            {errors[name]?.message?.toString()}
-                                        </Typography>
-                                    )}
-                                </Box>
+                                <TextField
+                                    key={idx}
+                                    id={name}
+                                    type={type}
+                                    label={label}
+                                    placeholder={placeholder}
+                                    {...register(name, enhanceValidation({ name, label, validation }))}
+                                    error={!!errors[name]}
+                                    helperText={errors[name]?.message?.toString()}
+                                    fullWidth
+                                    variant="outlined"
+                                    margin="dense"
+                                    sx={{
+                                        "& .MuiOutlinedInput-root": {
+                                            borderRadius: 2,
+                                            "&:hover fieldset": {
+                                                borderColor: "primary.main",
+                                            },
+                                        },
+                                    }}
+                                />
                             );
                         })}
 
@@ -143,7 +150,7 @@ export default function DynamicFormModal({
                         </Button>
 
                         {extraComponents}
-                    </form>
+                    </Stack>
                 </Box>
             </Fade>
         </Modal>

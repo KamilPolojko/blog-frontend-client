@@ -196,7 +196,7 @@ export default function HomePage() {
                         justifyContent: { xs: "center", sm: "flex-start" }
                     }}
                 >
-                    {popularArticles?.articles.map((article) => (
+                    {popularArticles?.articles?.map((article) => (
                         <Box
                             key={article.id}
                             sx={{

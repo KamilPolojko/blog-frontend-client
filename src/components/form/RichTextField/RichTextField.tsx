@@ -16,7 +16,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import Underline from "@tiptap/extension-underline";
 import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
-import { Placeholder } from '@tiptap/extensions';
+import Placeholder from '@tiptap/extension-placeholder';
 import { useTranslation } from 'react-i18next';
 import HardBreak from '@tiptap/extension-hard-break';
 import { FontSizeMark } from '@/utils/FontSizemark';
@@ -56,7 +56,6 @@ export default function RichTextField({
             Placeholder.configure({ placeholder }),
         ],
         content: value,
-        immediatelyRender: false,
         onUpdate: ({ editor }) => {
             onChange(editor.getHTML());
         },

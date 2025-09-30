@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { usePasswordReset } from '@/hooks/auth/usePasswordReset';
 import VerifyCodeModal from '@/components/modals/VerifyCodeModal';
 import ChangePasswordModal from '@/components/modals/ChangePasswordModal';
+import { Typography } from '@mui/material';
 
 interface ForgotPasswordModalProps {
     setOpenForgot: (openForgot: boolean) => void;
@@ -65,14 +66,26 @@ function ForgotPasswordModal({
                 extraComponents={
                     <>
                         {isSuccess && (
-                            <p className="text-green-500 text-sm">
-                                {t('forgot_password_modal.isSuccess')}
-                            </p>
+                            <Typography 
+                                sx={{ 
+                                    color: 'success.main', 
+                                    fontSize: '0.875rem',
+                                    textAlign: 'center',
+                                    }}
+                                    >
+                                        {t('forgot_password_modal.isSuccess')}
+                            </Typography>
                         )}
                         {isError && (
-                            <p className="text-red-500 text-sm">
-                                {t('forgot_password_modal.isError')}
-                            </p>
+                            <Typography 
+                                sx={{ 
+                                    color: 'error.main', 
+                                    fontSize: '0.875rem',
+                                    textAlign: 'center',
+                                    }}
+                                    >
+                            {t('forgot_password_modal.isError')}
+                            </Typography>
                         )}
                     </>
                 }

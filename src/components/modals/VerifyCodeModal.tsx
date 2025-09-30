@@ -4,6 +4,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useTranslation } from 'react-i18next';
 import { useVerifyCode } from '@/hooks/auth/useVerifyCode';
+import { Typography } from '@mui/material';
 
 interface VerifyCodeModalProps {
     setOpenVerifyCode: (open: boolean) => void;
@@ -59,14 +60,26 @@ export default function VerifyCodeModal({
             extraComponents={
                 <>
                     {isSuccess && (
-                        <p className="text-green-500 text-sm">
+                        <Typography 
+                            sx={{ 
+                                color: 'success.main', 
+                                fontSize: '0.875rem',
+                                textAlign: 'center',
+                                }}
+                            >
                             {t('verify_code_modal.isSuccess')}
-                        </p>
+                        </Typography>
                     )}
                     {isError && (
-                        <p className="text-red-500 text-sm">
+                        <Typography 
+                            sx={{ 
+                                color: 'error.main', 
+                                fontSize: '0.875rem',
+                                textAlign: 'center',
+                                }}
+                                >
                             {t('verify_code_modal.isError')}
-                        </p>
+                        </Typography>
                     )}
                 </>
             }

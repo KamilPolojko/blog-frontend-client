@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Typography, Button, TextField, useTheme } from '@mui/material';
+import { Box, Typography, Button, TextField, Stack } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
 import React, {useEffect, useState} from 'react';
 import FormField from '@/components/form/FormField';
@@ -144,10 +144,11 @@ export default function SettingsPage() {
             <Typography variant="h5" mb={2}>
                 {t('settings.settings')}
             </Typography>
-            <form
+            <Box
+                component="form"
                 onSubmit={handleSubmit(onSubmit)}
-                className="flex flex-col gap-4"
                 autoComplete="off"
+                sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
             >
                 <FormField name="firstName" label={t('form_fields.name.label')} control={control}/>
                 <FormField name="lastName" label={t('form_fields.surname.label')} control={control}/>
@@ -175,7 +176,7 @@ export default function SettingsPage() {
                                    {...field}
                                    label={t('form_fields.date_of_birth.label')}
                                    value={field.value ? dayjs(field.value) : null}
-                                   onChange={(date) => field.onChange(date ? date.toDate() : null)}
+                                   onChange={(date: dayjs.Dayjs | null) => field.onChange(date ? date.toDate() : null)}
                                    enableAccessibleFieldDOMStructure={false}
                                    slots={{ textField: TextField }}
                                    slotProps={{
@@ -194,10 +195,11 @@ export default function SettingsPage() {
                            )}
                 />
                 <FormField name="username" label={t('form_fields.username.label')} control={control}/>
-                <Box className={"flex flex-col"}>
+                <Stack spacing={0.5}>
                     <FormField name="email" label={t('form_fields.mail.email.label')} type="email" control={control} InputProps={{readOnly: true}}/>
                     <Typography
                         component="button"
+                        type="button"
                         onClick={() => {
                             setOpenChangeEmail(!openChangeEmail);
                         }}
@@ -209,15 +211,16 @@ export default function SettingsPage() {
                             border: 'none',
                             fontSize: '0.875rem',
                             textAlign: 'left',
+                            p: 0,
                         }}
                     >
                         {t('button.set_new_mail')}
                     </Typography>
                     <ChangeMailModal openChangeEmail={openChangeEmail} setOpenChangeEmail={setOpenChangeEmail}/>
-                </Box>
+                </Stack>
 
 
-                <Box className={"flex flex-col"}>
+                <Stack spacing={0.5}>
                     <FormField
                         name="password"
                         label={t('form_fields.password.password.label')}
@@ -243,6 +246,7 @@ export default function SettingsPage() {
                             border: 'none',
                             fontSize: '0.875rem',
                             textAlign: 'left',
+                            p: 0,
                         }}
                     >
                         {t('button.set_new_password')}
@@ -250,24 +254,33 @@ export default function SettingsPage() {
                     <ChangePasswordModal openChangePassword={openChangePassword}
                                          setOpenChangePassword={setOpenChangePassword}
                                         userId={null}/>
-                </Box>
+                </Stack>
 
 
-                <div className="flex flex-col gap-2 items-center">
+                <Stack spacing={1} alignItems="center">
                     <Typography fontWeight={600}>{t('settings.profile_img')}</Typography>
 
                     {previewImage ? (
-                        <Image
-                            src={previewImage}
-                            alt="Podgląd zdjęcia"
-                            width={120}
-                            height={120}
-                            style={{
-                                borderRadius: "50%",
-                                objectFit: "cover",
-                                border: "2px solid #ccc"
+                        <Box
+                            sx={{
+                                position: 'relative',
+                                width: 120,
+                                height: 120,
+                                borderRadius: '50%',
+                                overflow: 'hidden',
+                                border: '2px solid',
+                                borderColor: 'grey.300',
                             }}
-                        />
+                        >
+                            <Image
+                                src={previewImage}
+                                alt="Podgląd zdjęcia"
+                                fill
+                                style={{
+                                    objectFit: 'cover',
+                                }}
+                            />
+                        </Box>
                     ) : (
                         <Typography variant="body2" color="textSecondary">
                             {t('preview.no_image')}
@@ -275,7 +288,7 @@ export default function SettingsPage() {
                     )}
 
                     <DropzoneUpload onFileChange={onFileChange}/>
-                </div>
+                </Stack>
 
 
                 <Button
@@ -306,7 +319,7 @@ export default function SettingsPage() {
                         {t('settings.isError')}
                     </Typography>
                 )}
-            </form>
+            </Box>
         </Box>
     );
 }

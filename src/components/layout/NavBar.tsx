@@ -73,29 +73,31 @@ export default function NavBar() {
                     }}
                 >
                     <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
-                        <Link href="/" className="flex flex-row items-center">
-                            <Image
-                                src="/Notabene_logo.png"
-                                alt="Logo"
-                                width={56}
-                                height={56}
-                                className="h-auto w-14"
-                                priority
-                                sizes="56px"
-                            />
-                            <Typography
-                                variant="h6"
-                                noWrap
-                                sx={{
-                                    ml: 1,
-                                    display: { xs: 'none', md: 'flex' },
-                                    fontWeight: 700,
-                                    letterSpacing: '.15rem',
-                                    textDecoration: 'none',
-                                }}
-                            >
-                                {t('website_name')}
-                            </Typography>
+                        <Link href="/" style={{ textDecoration: 'none' }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                <Image
+                                    src="/Notabene_logo.png"
+                                    alt="Logo"
+                                    width={56}
+                                    height={56}
+                                    className="h-auto w-14"
+                                    priority
+                                    sizes="56px"
+                                />
+                                <Typography
+                                    variant="h6"
+                                    noWrap
+                                    sx={{
+                                        ml: 1,
+                                        display: { xs: 'none', md: 'flex' },
+                                        fontWeight: 700,
+                                        letterSpacing: '.15rem',
+                                        textDecoration: 'none',
+                                    }}
+                                >
+                                    {t('website_name')}
+                                </Typography>
+                            </Box>
                         </Link>
 
                         <HamburgerMenu pages={navbarTabs} />

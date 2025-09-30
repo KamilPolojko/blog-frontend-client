@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 import { useGetArticleById } from '@/hooks/articles/useGetArticle';
 import { useMe } from '@/hooks/auth/useMe';
 import { CustomCircularProgress } from '@/styles/CustomCircuralProgress';
-import { useArticleSocket } from '@/hooks/comment/useCommentSocket';
+import { useArticleSocket } from '@/hooks/articles/useArticleSocket';
 import { useGetComments } from '@/hooks/comment/useGetComments';
 import { useCommentManagement } from '@/hooks/comment/useCommentManagement';
 import { useCommentUI } from '@/hooks/comment/useCommentUI';

@@ -54,10 +54,8 @@ export default function FormField({
             fullWidth
             variant="outlined"
             margin="dense"
-            slotProps={{
-                formHelperText: {
-                    sx: { color: 'error.main' }
-                }
+            FormHelperTextProps={{
+                sx: { color: 'error.main' }
             }}
             {...props}
         />

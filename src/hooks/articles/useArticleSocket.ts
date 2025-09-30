@@ -2,7 +2,6 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import ioClient from 'socket.io-client';
 
-
 export const useArticleSocket = (articleId: string) => {
     const queryClient = useQueryClient();
 
@@ -19,41 +18,40 @@ export const useArticleSocket = (articleId: string) => {
             queryClient.invalidateQueries({ queryKey: ['comments', articleId] });
         };
 
-        socket.on('articleLiked', ({ articleId, likesCount }) => {
-            queryClient.setQueryData(['articleLikesCount', articleId], old => ({
-                ...old,
-                count: likesCount,
-            }));
-        });
-        socket.on('articleUnliked', ({ articleId, likesCount }) => {
-            queryClient.setQueryData(['articleLikesCount', articleId], old => ({
+        socket.on('articleLiked', ({ articleId, likesCount }: { articleId: string; likesCount: number }) => {
+            queryClient.setQueryData(['articleLikesCount', articleId], (old: any) => ({
                 ...old,
                 count: likesCount,
             }));
         });
 
+        socket.on('articleUnliked', ({ articleId, likesCount }: { articleId: string; likesCount: number }) => {
+            queryClient.setQueryData(['articleLikesCount', articleId], (old: any) => ({
+                ...old,
+                count: likesCount,
+            }));
+        });
 
         socket.on('newComment', handleInvalidateComment);
         socket.on('deletedComment', handleInvalidateComment);
         socket.on('editedComment', handleInvalidateComment);
 
-        socket.on('commentLiked', ({ commentId, likesCount }) => {
-            queryClient.setQueryData<number>(
-                ['commentLikesCount', commentId],
-                likesCount
-            );
-        });
-        socket.on('commentUnliked', ({ commentId, likesCount }) => {
+        socket.on('commentLiked', ({ commentId, likesCount }: { commentId: string; likesCount: number }) => {
             queryClient.setQueryData<number>(
                 ['commentLikesCount', commentId],
                 likesCount
             );
         });
 
+        socket.on('commentUnliked', ({ commentId, likesCount }: { commentId: string; likesCount: number }) => {
+            queryClient.setQueryData<number>(
+                ['commentLikesCount', commentId],
+                likesCount
+            );
+        });
 
         return () => {
             socket.disconnect();
         };
     }, [articleId, queryClient]);
-
 };
