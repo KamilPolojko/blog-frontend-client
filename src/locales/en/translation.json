@@ -1,0 +1,403 @@
+{
+  "homepage": {
+    "title": "Welcome to Notabene",
+    "subtitle": "Your source for insightful articles and stories.",
+    "top_authors": "Top Authors",
+    "is_clients_error": "Error loading authors.",
+    "latest_articles": "Latest Articles",
+    "is_articles_error": "Error loading articles.",
+    "explore_topics": "Explore Topics",
+    "popular_articles": "Popular Articles",
+    "is_popular_articles_error": "Error loading popular articles."
+  },
+  "website_name": "NOTABENE",
+  "navbar": {
+    "home": "Home",
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "title": {
+      "law_information": "Legal information",
+      "category": "Categories",
+      "follow": "Follow us"
+    },
+    "item": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "technology": "Technology",
+      "sport": "Sport",
+      "music": "Music",
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    }
+  },
+  "settings": {
+    "settings": "Settings",
+    "profile_img": "Profile image",
+    "isPending": "Saving...",
+    "isError": "An error occurred while saving.",
+    "isSuccess": "Data changed!"
+  },
+  "contact": {
+    "contact_us": "Contact us",
+    "question": "If you have any questions or need assistance, please fill out the form below.",
+    "isPending": "Sending...",
+    "isError": "Error sending message",
+    "isSuccess": "The message has been sent!"
+  },
+  "about_us": {
+    "title": "About Us",
+    "subtitle": "Welcome to Notabene, a blog dedicated to exploring a wide range of interesing topics.",
+    "h1": "Welcome to passionate writers and researchers is commited to delivering well-researched and enganing content. We believe in the power of konwledge and the importance of cuiosity.",
+    "h2": "Our team is dedicated to bringing you insightful articles that inspire, inform, and entertain. Whether you are looking for the latest trends, timeless classics, or deep dives into specific subjects, Notabene has something for everyone.",
+    "h3": "Thank you for visiting our blog and being part of our community."
+  },
+  "client_profile": {
+    "profile_not_found": "Profile not found",
+    "user_not_exist": "The user may not exist or the profile is unavailable.",
+    "not_specified_error": "Not specified",
+    "articles_count": "articles",
+    "profile_information": "Profile Information",
+    "name_surname": "Name and Surname",
+    "private": "Private",
+    "number_of_articles": "Number of Articles",
+    "user_articles": "User's Articles ({{length}})",
+    "is_own_profile": {
+      "true": "You don't have any articles yet. Create your first one!",
+      "false": "This user has not published any articles yet."
+    }
+  },
+  "categories": {
+    "title": "Categories",
+    "articles_not_found": "No articles found for the selected categories"
+  },
+  "article": {
+    "anonymous": "Anonymous",
+    "min_read": "min. read",
+    "by": "By",
+    "edit_article": "Edit Article",
+    "errors": {
+      "load_error": "An error occurred while loading the article.",
+      "not_found": "No articles found."
+    }
+  },
+  "saved_articles": {
+    "isError": "There was an error loading your saved articles.",
+    "have_to_log_in": "\nYou must be logged in!"
+  },
+  "profile_tabs": {
+    "settings": "Settings",
+    "create_article": "Create new article",
+    "saved_articles": "Saved articles",
+    "my_articles": "My articles"
+  },
+  "search_bar": {
+    "placeholder": "Search..."
+  },
+  "search_bar_results": {
+    "users": "Users",
+    "articles": "Articles",
+    "tags": "tags"
+  },
+  "notifications": {
+    "notifications": "Notifications",
+    "user": "User",
+    "article_liked": "liked your article.",
+    "comment_added": "commented on your article.",
+    "reply_added": "replied to your comment.",
+    "comment_liked": "liked your comment.",
+    "article_saved": "saved your article.",
+    "new_notification": "New notification.",
+    "noNotifications": "No notifications."
+  },
+  "form_fields": {
+    "mail": {
+      "newEmail": {
+        "label": "New e-mail address"
+      },
+      "repeatNewEmail": {
+        "label": "Repeat new e-mail address"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "Email"
+      },
+      "errors": {
+        "required": "Email is required.",
+        "pattern": {
+          "message": "Invalid email format."
+        }
+      }
+    },
+    "password": {
+      "password": {
+        "label": "Password",
+        "placeholder": "Password"
+      },
+      "newPassword": {
+        "label": "New password",
+        "placeholder": "New password"
+      },
+      "repeatNewPassword": {
+        "label": "Repeat new password",
+        "placeholder": "Repeat new password"
+      },
+      "errors": {
+        "required": "Password is required.",
+        "pattern": {
+          "message": "Password must be at least 8 characters, contain at least 1 uppercase letter, 1 number and 1 special character."
+        },
+        "mismatch": "Passwords do not match."
+      }
+    },
+    "username": {
+      "label": "Username",
+      "placeholder": "Username",
+      "errors": {
+        "required": "Required"
+      }
+    },
+    "content": {
+      "placeholder": "Write a comment…",
+      "errors": {
+        "required": "Comment content is required",
+        "minLength": {
+          "message": "Comment cannot be empty"
+        }
+      }
+    },
+    "reply_content": {
+      "placeholder": "Reply to {{authorUsername}}…",
+      "errors": {
+        "required": "Content of the reply is required",
+        "minLength": {
+          "message": "Reply cannot be empty"
+        }
+      }
+    },
+    "title": {
+      "label": "Title",
+      "errors": {
+        "required": "Title is required",
+        "maxLength": {
+          "message": "Title cannot have more than 100 characters"
+        }
+      }
+    },
+    "article_content": {
+      "label": "Article content",
+      "placeholder": "Enter article content...",
+      "errors": {
+        "required": "Content is required"
+      }
+    },
+    "description": {
+      "label": "Description/SneakPeek",
+      "placeholder": "Enter description...",
+      "errors": {
+        "required": "Description is required"
+      }
+    },
+    "categories": {
+      "label": "Categories",
+      "placeholder": "Choose or add",
+      "errors": {
+        "required": "At least one category is required"
+      }
+    },
+    "preview_image": {
+      "typography": "Article image",
+      "errors": {
+        "required":"Image is required"
+      }
+    },
+    "isActive": {
+      "label": "Article status",
+      "active_value": "(The article will be publicly visible)",
+      "inactive_value": "(Article will be hidden)"
+    },
+    "reading_time": {
+      "label": "Reading time",
+      "second_label": "Reading time (min)",
+      "helper_text": "Estimated reading time for the article",
+      "errors": {
+        "required": "Reading time is required",
+        "min": "Minimum 1 minute",
+        "max": "Maximum 300 minutes"
+      }
+    },
+    "created_at": {
+      "label": "Date of creation"
+    },
+    "date_of_birth": {
+      "label": "Date of birth",
+      "placeholder": "RRRR-MM-DD"
+    },
+    "gender": {
+      "label": "Gender",
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "name": {
+      "label": "Name",
+      "errors": {
+        "required": "This field is required"
+      }
+    },
+    "surname": {
+      "label": "Surname",
+      "errors": {
+        "required": "This field is required"
+      }
+    },
+    "subject": {
+      "label": "Subject",
+      "errors": {
+        "required": "This field is required"
+      }
+    },
+    "message": {
+      "label": "Message",
+      "errors": {
+        "required": "This field is required"
+      }
+    },
+    "verification_code": {
+      "label": "Verification code",
+      "placeholder": "Verification code",
+      "errors": {
+        "bad_code": "Code is incorrect",
+        "required": "Code is required",
+        "minLength": {
+          "message": "The code must be at least 4 digits long"
+        }
+      }
+    }
+  },
+  "mail_modal": {
+    "title": "Set a new e-mail",
+    "isError": "An error occurred while changing your e-mail address. Please try again.",
+    "isSuccess": "E-mail address has been successfully changed."
+  },
+  "password_modal": {
+    "title": "Set a new password",
+    "isError": "An error occurred while changing the password. Please try again.",
+    "isSuccess": "Password has been successfully changed."
+  },
+  "confirm_delete_modal": {
+    "title": "Confirm deletion",
+    "message": "Are you sure you want to delete this article? This action cannot be undone."
+  },
+  "forgot_password_modal": {
+    "title": "Remind password",
+    "isSuccess": "Code has been send successfully",
+    "isError": "Given email doesnt exits!",
+    "isPending": "Sending code..."
+  },
+  "verify_code_modal": {
+    "title": "Verify code",
+    "isSuccess": "Code has been verified successfully!",
+    "isError": "Given code isnot correct",
+    "isPending": "Verifying the code..."
+  },
+  "login_modal": {
+    "title": "Login",
+    "isSuccess": "Successfully logged in!",
+    "isError": "Invalid login details.",
+    "isPending": "Logging in..."
+  },
+  "registration_modal": {
+    "title": "Registration",
+    "isSuccess": "Successfully registered!",
+    "isError": "An error occurred during registration.",
+    "isPending": "Registering..."
+  },
+  "article_form": {
+    "isSuccess": "Article has been created!",
+    "isError": "An error occurred while saving.",
+    "isPending": "Saving..."
+  },
+  "preview": {
+    "error": "Preview error.",
+    "no_image": "No image"
+  },
+  "comments": {
+    "comment_section": {
+      "comments": "Comments",
+      "no_comments": "No comments."
+    },
+    "comment_item": {
+      "see_more": "See more replies ({{count}})"
+    },
+    "comment_header": {
+      "user": "User",
+      "level": "• level {{level}}"
+    },
+    "comment_content": {
+      "full_comment": "See full comment",
+      "comment": "Comment"
+    }
+  },
+  "save_article_button": {
+    "isSaved": "Delete from saved",
+    "isNotSaved": "Save article"
+  },
+  "dropzone_upload": {
+    "drag_drop": "Drag and drop photo here",
+    "choose_file": "or click to select a file"
+  },
+  "thread": {
+    "expand": "Expand thread",
+    "collapse": "Collapse thread",
+    "reply_singular": "reply",
+    "reply_plural": "replies"
+  },
+  "button": {
+    "load_more": "Load more",
+    "read_more": "Read more",
+    "loading": "Loading...",
+    "save": "Save",
+    "save_changes": "Save changes",
+    "unsave": "Remove from saved",
+    "add_comment": "Add comment",
+    "reply": "Reply",
+    "add_reply": "Add reply",
+    "submit": "Send",
+    "submit_article": "Save article",
+    "create_article": "Create article",
+    "edit": "Edit",
+    "edition": "Edition",
+    "edit_profile": "Edit profile",
+    "preview": "Preview",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "view_profile": "View profile",
+    "log_in": "Log in",
+    "log_out": "Log out",
+    "register_in": "Register",
+    "set_new_mail": "Set new E-mail",
+    "set_new_password": "Set new password"
+  },
+  "table": {
+    "header": {
+      "id": "Id",
+      "title": "Title",
+      "likes_quantity": "Likes Quantity",
+      "comments_quantity": "Comments Quantity",
+      "saved_count": "Quantity of Saved",
+      "reading_time": "Reading Time (mins)",
+      "created_at": "Created At",
+      "status": "Status",
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive"
+  }
+}

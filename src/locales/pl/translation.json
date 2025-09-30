@@ -1,0 +1,403 @@
+{
+  "homepage": {
+    "title": "Witaj w Notabene",
+    "subtitle": "Twoje źródło wnikliwych artykułów i historii.",
+    "top_authors": "Najlepsi Autorzy",
+    "is_clients_error": "Błąd podczas ładowania autorów.",
+    "latest_articles": "Najnowsze Artykuły",
+    "is_articles_error": "Błąd podczas ładowania artykułów.",
+    "explore_topics": "Odkryj Tematy",
+    "popular_articles": "Popularne Artykuły",
+    "is_popular_articles_error": "Błąd podczas ładowania popularnych artykułów."
+  },
+  "website_name": "NOTABENE",
+  "navbar": {
+    "home": "Strona Główna",
+    "categories": "Kategorie",
+    "about": "O nas",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "title": {
+      "law_information": "Informacje prawne",
+      "category": "Kategorie",
+      "follow": "Obserwuj nas"
+    },
+    "item": {
+      "privacy": "Polityka prywatności",
+      "terms": "Warunki korzystania",
+      "technology": "technologia",
+      "sport": "Sport",
+      "music": "Muzyka",
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    }
+  },
+  "settings": {
+    "settings": "Ustawienia konta",
+    "profile_img": "Zdjęcie profilowe",
+    "isPending": "Zapisywanie...",
+    "isError": "Wystąpił błąd podczas zapisywania.",
+    "isSuccess": "Zmieniono dane!"
+  },
+  "contact": {
+    "contact_us": "Skontaktuj sie z nami",
+    "question": "Jeśli masz jakieś pytania lub potrzebujesz pomocy, wypełnij poniższy formularz.",
+    "isPending": "Wysyłanie...",
+    "isError": "Błąd wysyłania wiadomości",
+    "isSuccess": "Wiadomość została wysłana!"
+  },
+  "about_us": {
+    "title": "O nas",
+    "subtitle": "Witamy na Notabene, blogu poświęconym odkrywaniu szerokiej gamy interesujących tematów.",
+    "h1": "Witamy pasjonatów pisania i badaczy, którzy angażują się w dostarczanie rzetelnych i wciągających treści. Wierzymy w siłę wiedzy i znaczenie ciekawości.",
+    "h2": "Nasz zespół stara się dostarczać wnikliwe artykuły, które inspirują, informują i bawią. Niezależnie od tego, czy szukasz najnowszych trendów, ponadczasowych klasyków czy dogłębnych analiz konkretnych zagadnień — Notabene ma coś dla każdego.",
+    "h3": "Dziękujemy za odwiedzenie naszego bloga i bycie częścią naszej społeczności."
+  },
+  "client_profile": {
+    "profile_not_found": "Profil nie został znaleziony",
+    "user_not_exist": "Użytkownik może nie istnieć lub profil jest niedostępny.",
+    "not_specified_error": "Nie podano",
+    "articles_count": "artykułów",
+    "profile_information": "Informacje o profilu",
+    "name_surname": "Imię i nazwisko",
+    "private": "Prywatne",
+    "number_of_articles": "Liczba artykułów",
+    "user_articles": "Artykuły użytkownika ({{length}})",
+    "is_own_profile": {
+      "true": "Nie masz jeszcze żadnych artykułów. Stwórz swój pierwszy artykuł!",
+      "false": "Ten użytkownik nie opublikował jeszcze żadnych artykułów."
+    }
+  },
+  "categories": {
+    "title": "Kategorie",
+    "articles_not_found": "Nie znaleziono artykułów dla wybranych kategorii"
+  },
+  "article": {
+    "anonymous": "Anonim",
+    "min_read": "min. czytania",
+    "by": "Przez",
+    "edit_article": "Edytuj Artykuł",
+    "errors": {
+        "load_error": "Wystąpił błąd podczas ładowania artykułu.",
+        "not_found": "Brak artykułów."
+    }
+  },
+  "saved_articles": {
+    "isError": "Wystąpił błąd podczas ładowania zapisanych artykułów.",
+    "have_to_log_in": "Musisz być zalogowany!"
+  },
+  "profile_tabs": {
+    "settings": "Ustawienia",
+    "create_article": "Stwórz nowy artykuł",
+    "saved_articles": "Zapisane artykuły",
+    "my_articles": "Moje artykuły"
+  },
+  "search_bar": {
+    "placeholder": "Szukaj..."
+  },
+  "search_bar_results": {
+    "users": "Użytkownicy",
+    "articles": "Artykuły",
+    "tags": "tagi"
+  },
+  "notifications": {
+    "notifications": "Powiadomienia",
+    "user": "Użytkownik",
+    "article_liked": "polubił Twój artykuł.",
+    "comment_added": "skomentował Twój artykuł.",
+    "reply_added": "odpowiedział na Twój komentarz.",
+    "comment_liked": "polubił Twój komentarz.",
+    "article_saved": "zapisał Twój artykuł.",
+    "new_notification": "Nowe powiadomienie.",
+    "noNotifications": "Brak powiadomień."
+  },
+  "form_fields": {
+    "mail": {
+      "newEmail": {
+        "label": "Nowy Adres e-mail"
+      },
+      "repeatNewEmail": {
+        "label": "Powtórz Nowy Adres e-mail"
+      },
+      "email": {
+        "label": "Adres e-mail",
+        "placeholder": "Email"
+      },
+      "errors": {
+        "required": "Email jest wymagany.",
+        "pattern": {
+          "message": "Nieprawidłowy format emaila."
+        }
+      }
+    },
+    "password": {
+      "password": {
+        "label": "Hasło",
+        "placeholder": "Hasło"
+      },
+      "newPassword": {
+        "label": "Nowe Hasło",
+        "placeholder": "Nowe hasło"
+      },
+      "repeatNewPassword": {
+        "label": "Powtórz Nowe hasło",
+        "placeholder": "Powtórz Nowe hasło"
+      },
+      "errors": {
+        "required": "Hasło jest wymagane.",
+        "pattern": {
+          "message": "Hasło musi mieć minimum 8 znaków, zawierać co najmniej 1 dużą literę, 1 cyfrę oraz 1 znak specjalny"
+        },
+        "mismatch": "Hasła nie są takie same."
+      }
+    },
+    "username": {
+      "label": "Nazwa użytkownika",
+      "placeholder": "Nazwa użytkownika",
+      "errors": {
+        "required": "Wymagane"
+      }
+    },
+    "content": {
+      "placeholder": "Napisz komentarz…",
+      "errors": {
+        "required": "Treść komentarza jest wymagana",
+        "minLength": {
+          "message": "Komentarz nie może być pusty"
+        }
+      }
+    },
+    "reply_content": {
+      "placeholder": "Odpowiedz {{authorUsername}}…",
+      "errors": {
+        "required": "Treść odpowiedzi jest wymagana",
+        "minLength": {
+          "message": "Odpowiedź nie może być pusta"
+        }
+      }
+    },
+    "title": {
+      "label": "Tytuł",
+      "errors": {
+        "required": "Tytuł jest wymagany",
+        "maxLength": {
+          "message": "Tytuł nie może mieć więcej niż 100 znaków"
+        }
+      }
+    },
+    "article_content": {
+      "label": "Treść artykułu",
+      "placeholder": "Wprowadź treść artykułu...",
+      "errors": {
+        "required": "Treść jest wymagana"
+      }
+    },
+    "description": {
+      "label": "Opis/Zajawka",
+      "placeholder": "Wprowadź opis...",
+      "errors": {
+        "required": "Opis jest wymagany"
+      }
+    },
+    "categories": {
+      "label": "Kategorie",
+      "placeholder": "Wybierz lub dodaj",
+      "errors": {
+        "required": "Przynajmniej jedna kategoria jest wymagana"
+      }
+    },
+    "preview_image": {
+      "typography": "Zdjęcie artykułu",
+      "errors": {
+        "required":"Zdjęcie jest wymagane"
+      }
+    },
+    "isActive": {
+      "label": "Status artykułu",
+      "active_value": "(Artykuł będzie widoczny publicznie)",
+      "inactive_value": "(Artykuł będzie ukryty)"
+    },
+    "reading_time": {
+      "label": "Czas czytania",
+      "second_label": "Czas czytania (min)",
+      "helper_text": "Przewidywany czas czytania artykułu",
+      "errors": {
+        "required": "Czas czytania jest wymagany",
+        "min": "Minimum 1 minuta",
+        "max": "Maksimum 300 minut"
+      }
+    },
+    "created_at": {
+      "label": "Data utworzenia"
+    },
+    "date_of_birth": {
+      "label": "Data urodzenia",
+      "placeholder": "RRRR-MM-DD"
+    },
+    "gender": {
+      "label": "Płeć",
+      "male": "Mężczyzna",
+      "female": "Kobieta",
+      "other": "Inna"
+    },
+    "name": {
+      "label": "Imię",
+      "errors": {
+        "required": "To pole jest wymagane"
+      }
+    },
+    "surname": {
+      "label": "Nazwisko",
+      "errors": {
+        "required": "This field is required"
+      }
+    },
+    "subject": {
+      "label": "Temat",
+      "errors": {
+        "required": "To pole jest wymagane"
+      }
+    },
+    "message": {
+      "label": "Wiadomość",
+      "errors": {
+        "required": "To pole jest wymagane"
+      }
+    },
+    "verification_code": {
+      "label": "Kod weryfikacyjny",
+      "placeholder": "Kod weryfikacyjny",
+      "errors": {
+        "bad_code": "Kod jest nieprawidłowy",
+        "required": "Kod jest wymagany",
+        "minLength": {
+          "message": "Kod musi mieć conajmniej 4 cyfry"
+        }
+      }
+    }
+  },
+  "mail_modal": {
+    "title": "Ustaw nowy e-mail",
+    "isError": "Wystąpił błąd podczas zmiany adresu e-mail. Spróbuj ponownie.",
+    "isSuccess": "Adres e-mail został pomyślnie zmieniony."
+  },
+  "password_modal": {
+    "title": "Ustaw nowe hasło",
+    "isError": "Wystąpił błąd podczas zmiany hasła. Spróbuj ponownie.",
+    "isSuccess": "Hasło zostało pomyślnie zmienione."
+  },
+  "confirm_delete_modal": {
+    "title": "Potwierdź usunięcie artykułu",
+    "message": "Czy na pewno chcesz usunąć ten artykuł? Tej operacji nie można cofnąć."
+  },
+  "forgot_password_modal": {
+    "title": "Przypomnij hasło",
+    "isSuccess": "Wysłano kod pomyślnie!",
+    "isError": "Podany email nie istnieje.",
+    "isPending": "Wysyłam kod..."
+  },
+  "verify_code_modal": {
+    "title": "Zweryfikuj kod",
+    "isSuccess": "Kod zweryfikowano pomyślnie!",
+    "isError": "Podany kod nie jest prawidłowy.",
+    "isPending": "Weryfikuje kod..."
+  },
+  "login_modal": {
+    "title": "Logowanie",
+    "isSuccess": "Zalogowano pomyślnie!",
+    "isError": "Błędne dane logowania.",
+    "isPending": "Loguję..."
+  },
+  "registration_modal": {
+    "title": "Rejestracja",
+    "isSuccess": "Rejestracja zakończona pomyślnie!",
+    "isError": "Wystąpił błąd przy rejestracji",
+    "isPending": "Rejestrowanie..."
+  },
+  "article_form": {
+    "isSuccess": "Artykuł został stworzony!",
+    "isError": "Wystąpił błąd podczas tworzenia artykułu",
+    "isPending": "Tworzenie..."
+  },
+  "preview": {
+    "error": "Błąd wyświetlania podglądu.",
+    "no_image": "Brak zdjęcia"
+  },
+  "comments": {
+    "comment_section": {
+      "comments": "Komentarze",
+      "no_comments": "Brak komentarzy."
+    },
+    "comment_item": {
+      "see_more": "Zobacz więcej odpowiedzi ({{count}})"
+    },
+    "comment_header": {
+      "user": "Użytkownik",
+      "level": "• poziom {{level}}"
+    },
+    "comment_content": {
+      "full_comment": "Zobacz cały komentarz",
+      "comment": "Komentarz"
+    }
+  },
+  "save_article_button": {
+    "isSaved": "Usuń z zapisanych",
+    "isNotSaved": "Zapisz artykuł"
+  },
+  "dropzone_upload": {
+    "drag_drop": "Przeciągnij i upuść zdjęcie tutaj",
+    "choose_file": "lub kliknij, aby wybrać plik"
+  },
+  "thread": {
+    "expand": "Rozwiń wątek",
+    "collapse": "Zwiń wątek",
+    "reply_singular": "odpowiedź",
+    "reply_plural": "odpowiedzi"
+  },
+  "button": {
+    "load_more": "Załaduj więcej",
+    "read_more": "Czytaj więcej",
+    "loading": "Ładowanie...",
+    "save": "Zapisz",
+    "save_changes": "Zapisz zmiany",
+    "unsave": "Usuń z zapisanych",
+    "add_comment": "Dodaj komentarz",
+    "reply": "Odpowiedz",
+    "add_reply": "Dodaj odpowiedź",
+    "submit": "Wyślij",
+    "submit_article": "Zapisz artykuł",
+    "create_article": "Stwórz artykuł",
+    "edit": "Edytuj",
+    "edition": "Edycja",
+    "edit_profile": "Edytuj profil",
+    "preview": "Podgląd",
+    "delete": "Usuń",
+    "cancel": "Anuluj",
+    "view_profile": "Zobacz profil",
+    "log_in": "Zaloguj się",
+    "log_out": "Wyloguj się",
+    "register_in": "Zarejestruj się",
+    "set_new_mail": "Ustaw nowy E-mail",
+    "set_new_password": "Ustaw nowe Hasło"
+  },
+  "table": {
+    "header": {
+      "id": "Id",
+      "title": "Tytuł",
+      "likes_quantity": "Ilość polubień",
+      "comments_quantity": "Ilość komentarzy",
+      "saved_count": "Ilość zapisanych artykułów",
+      "reading_time": "Czas czytania (min)",
+      "created_at": "Utworzono o godz",
+      "status": "Status",
+      "edit": "Edytuj",
+      "delete": "Usuń"
+    }
+  },
+  "status": {
+    "active": "Aktywny",
+    "inactive": "Nieaktywny"
+  }
+}
