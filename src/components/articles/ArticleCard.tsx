@@ -54,109 +54,113 @@ export default function ArticleCard({ article, invalidateArticleList, invalidate
     if(!ready) return null;
     return (
         <Link href={ROUTES.ARTICLE(article.id)}>
-            <Card sx={{ 
-                width: 340, 
-                margin: 'auto', 
-                borderRadius: 3, 
-                boxShadow: 3, 
-                display: 'flex', 
-                flexDirection: 'column', 
-                height: 460, 
-                backgroundColor: theme.palette.background.default 
-            }}>
-                {linkIImage && (
-                    <CardMedia
-                        component="img"
-                        sx={{
-                            height: 200,
-                            objectFit: 'cover',
-                            background: '#f5f5f5',
-                            width: '100%',
-                            borderRadius: '8px 8px 0 0',
-                        }}
-                        image={linkIImage}
-                        alt={title}
-                    />
-                )}
-                
-                <CardHeader
-                    avatar={
-                        <Avatar src={authorAvatar} sx={{ width: 36, height: 36 }}>
-                            {!authorAvatar && authorName[0]}
-                        </Avatar>
-                    }
-                    title={
-                        <Typography variant="subtitle1" fontWeight="bold">
-                            {authorName}
-                        </Typography>
-                    }
+        <Card sx={{ 
+            width: 340, 
+            margin: 'auto', 
+            borderRadius: 3, 
+            boxShadow: 3, 
+            display: 'flex', 
+            flexDirection: 'column', 
+            height: 520,
+            backgroundColor: theme.palette.background.default 
+        }}>
+            {linkIImage && (
+                <CardMedia
+                    component="img"
                     sx={{
-                        px: 2,
-                        pt: 1,
-                        pb: 0,
+                        height: 200,
+                        objectFit: 'cover',
+                        background: '#f5f5f5',
+                        width: '100%',
+                        borderRadius: '8px 8px 0 0',
                     }}
+                    image={linkIImage}
+                    alt={title}
                 />
-                
-                <CardContent sx={{ 
-                    flex: 1,
-                    minHeight: 0,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    overflow: 'hidden',
-                }}>
-                    <Typography variant="h6" fontWeight="bold" gutterBottom>
-                        {title}
+            )}
+            
+            <CardHeader
+                avatar={
+                    <Avatar src={authorAvatar} sx={{ width: 36, height: 36 }}>
+                        {!authorAvatar && authorName[0]}
+                    </Avatar>
+                }
+                title={
+                    <Typography variant="subtitle1" fontWeight="bold">
+                        {authorName}
                     </Typography>
-                    
-                    <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            display: '-webkit-box',
-                            WebkitBoxOrient: 'vertical',
-                            WebkitLineClamp: 3,
-                            lineHeight: '1.4rem',
-                            maxHeight: '4.2rem',
-                            whiteSpace: 'normal',
-                            marginBottom: 2,
-                            "& p": { margin: 0 },
-                            "& p + p": { marginTop: "0.5em" },
-                        }}
-                        dangerouslySetInnerHTML={{ __html: description }}
-                    />
-
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            gap: 0.5,
-                            height: `${(32 + 4) * 2}px`,
-                            overflow: 'hidden',
-                        }}
-                    >
-                        {normalizedCategories.map((tag: string) => (
-                            <Chip
-                                key={tag}
-                                label={tag}
-                                size="small"
-                            />
-                        ))}
-                    </Box>
-                </CardContent>
+                }
+                sx={{
+                    px: 2,
+                    pt: 1,
+                    pb: 0,
+                    flexShrink: 0,
+                }}
+            />
+            
+            <CardContent sx={{ 
+                flex: 1,
+                minHeight: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden',
+                pb: 1,
+            }}>
+                <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ flexShrink: 0 }}>
+                    {title}
+                </Typography>
                 
-                <CardActions
+                <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
+                        WebkitLineClamp: 4,
+                        lineHeight: '1.4rem',
+                        maxHeight: '5.6rem',
+                        whiteSpace: 'normal',
+                        marginBottom: 2,
+                        flexShrink: 0,
+                        "& p": { margin: 0 },
+                        "& p + p": { marginTop: "0.5em" },
+                    }}
+                    dangerouslySetInnerHTML={{ __html: description }}
+                />
+
+                <Box
                     sx={{
                         display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        px: 2,
-                        pt: 1,
-                        pb: 1,
+                        flexWrap: 'wrap',
+                        gap: 0.5,
+                        height: '68px',
+                        overflow: 'hidden',
                         flexShrink: 0,
                     }}
                 >
+                    {normalizedCategories.map((tag: string) => (
+                        <Chip
+                            key={tag}
+                            label={tag}
+                            size="small"
+                        />
+                    ))}
+                </Box>
+            </CardContent>
+            
+            <CardActions
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    px: 2,
+                    pt: 1,
+                    pb: 1,
+                    flexShrink: 0,
+                }}
+            >
                     <Stack direction="row" alignItems="center" spacing={2}>
                         <Stack direction="row" alignItems="center" gap={0.5}>
                             <Typography>{likes?.length ?? 0}</Typography>
