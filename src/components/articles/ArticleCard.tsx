@@ -132,7 +132,7 @@ export default function ArticleCard({ article, invalidateArticleList, invalidate
                             display: 'flex',
                             flexWrap: 'wrap',
                             gap: 0.5,
-                            height: `${(24 + 4) * 2}px`,
+                            height: `${(32 + 4) * 2}px`,
                             overflow: 'hidden',
                         }}
                     >
