@@ -41,7 +41,7 @@ export const SearchBar = ({ onResultSelect, placeholder }: SearchBarProps) => {
             id: u.id,
             title: u.username || 'Bez nazwy',
             subtitle: u.email,
-            avatar: u.profile.linkIImage,
+            avatar: u.profile?.linkIImage || undefined,
             data: u
         }));
 
