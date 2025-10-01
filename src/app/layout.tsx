@@ -10,6 +10,7 @@ import {ReactNode, useState} from "react";
 import {LoginModalProvider} from "@/context/LoginModalContext";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers';
+import { Box } from '@mui/material';
 
 
 export default function RootLayout({
@@ -20,16 +21,31 @@ export default function RootLayout({
     const [queryClient] = useState(() => new QueryClient());
     return (
         <html lang="pl">
-            <body>
+            <body style={{ margin: 0, padding: 0 }}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
             <QueryClientProvider client={queryClient}>
                 <ThemeRegistry>
                     <LoginModalProvider>
-                    <div className={`flex flex-col min-h-screen`}>
-                        <NavBar />
-                        <main className="flex-grow">{children}</main>
-                        <Footer />
-                    </div>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                minHeight: '100vh',
+                            }}
+                        >
+                            <NavBar />
+                            <Box
+                                component="main"
+                                sx={{
+                                    flex: 1,
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                }}
+                            >
+                                {children}
+                            </Box>
+                            <Footer />
+                        </Box>
                     </LoginModalProvider>
                 </ThemeRegistry>
             </QueryClientProvider>
