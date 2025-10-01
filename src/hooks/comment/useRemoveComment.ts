@@ -5,7 +5,7 @@ import { API_ROUTES } from '@/routes/api_routes';
 export const useRemoveComment = () => {
     return useMutation({
         mutationFn: async (id: string) => {
-            await api.delete(API_ROUTES.COMMENTS.REMOVE_COMMENT(id), { withCredentials: true });
+            await api.delete(API_ROUTES.COMMENTS.REMOVE_COMMENT(id));
         },
     });
 };

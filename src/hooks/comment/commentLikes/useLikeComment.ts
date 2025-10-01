@@ -8,7 +8,7 @@ export const useLikeComment = (commentId: string): UseMutationResult<void, Error
     return useMutation<void, Error, void>({
         mutationKey: ['likeComment', commentId],
         mutationFn: async () => {
-            await api.post(API_ROUTES.COMMENTS.COMMENT_LIKES.COMMENT_LIKE_TOGGLE(commentId), {}, { withCredentials: true });
+            await api.post(API_ROUTES.COMMENTS.COMMENT_LIKES.COMMENT_LIKE_TOGGLE(commentId), {});
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['comments'] });

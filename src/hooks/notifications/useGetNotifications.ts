@@ -9,9 +9,7 @@ export const useNotifications = () => {
     const q = useQuery<Notification[]>({
         queryKey: ['notifications'],
         queryFn: async () => {
-            const { data } = await api.get<Notification[]>(API_ROUTES.NOTIFICATIONS.NOTIFICATIONS, {
-                withCredentials: true,
-            });
+            const { data } = await api.get<Notification[]>(API_ROUTES.NOTIFICATIONS.NOTIFICATIONS);
             return data;
         },
         staleTime: 60 * 1000,

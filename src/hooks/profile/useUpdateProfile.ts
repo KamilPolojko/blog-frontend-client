@@ -10,9 +10,7 @@ export const useUpdateProfile = () => {
         mutationKey: ['updateProfile'],
         mutationFn: async (formData: FormData) => {
             return api.patch(API_ROUTES.PROFILE.UPDATE_PROFILE, formData, {
-                headers: { 'Content-Type': 'multipart/form-data' },
-                withCredentials: true,
-            });
+                headers: { 'Content-Type': 'multipart/form-data' }});
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["me"] });

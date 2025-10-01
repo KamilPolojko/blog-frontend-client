@@ -9,9 +9,7 @@ export const useChangeEmail = () => {
     return useMutation<void, Error, FormData>({
         mutationKey: ['changeEmail'],
         mutationFn: async (formData: FormData) => {
-            const { data } = await api.patch<void>(API_ROUTES.PROFILE.CHANGE_EMAIL, formData, {
-                withCredentials: true,
-            });
+            const { data } = await api.patch<void>(API_ROUTES.PROFILE.CHANGE_EMAIL, formData);
             return data;
         },
         onSuccess: () => {

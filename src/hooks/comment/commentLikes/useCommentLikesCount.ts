@@ -10,9 +10,7 @@ export const useCommentLikesCount = (commentId: string) => {
     return useQuery<number>({
         queryKey: ['commentLikesCount', commentId],
         queryFn: async () => {
-            const { data } = await api.get<CommentLikesCountResponse>(API_ROUTES.COMMENTS.COMMENT_LIKES.COMMENT_LIKES_COUNT(commentId), {
-                withCredentials: true,
-            });
+            const { data } = await api.get<CommentLikesCountResponse>(API_ROUTES.COMMENTS.COMMENT_LIKES.COMMENT_LIKES_COUNT(commentId));
             return data.count;
         },
         staleTime: 5 * 60 * 1000,

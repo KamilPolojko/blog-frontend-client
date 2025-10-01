@@ -9,9 +9,7 @@ export const useChangePassword = () => {
     return useMutation<void, Error, FormData>({
         mutationKey: ['changePassword'],
         mutationFn: async (formData: FormData) => {
-            const { data } = await api.patch<void>(API_ROUTES.PROFILE.CHANGE_PASSWORD, formData, {
-                withCredentials: true,
-            });
+            const { data } = await api.patch<void>(API_ROUTES.PROFILE.CHANGE_PASSWORD, formData);
             return data;
         },
         onSuccess: () => {
