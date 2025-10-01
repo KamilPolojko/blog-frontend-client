@@ -26,6 +26,7 @@ export default function ArticleHomePageCard({ article }: ArticleHomePageCardProp
                 flexDirection: "column",
                 gap: 1,
                 width: 300,
+                height: 450,
             }}
         >
             <Box
@@ -64,6 +65,7 @@ export default function ArticleHomePageCard({ article }: ArticleHomePageCardProp
                     WebkitBoxOrient: "vertical",
                     WebkitLineClamp: 3,
                     lineHeight: "1.4rem",
+                    minHeight: "4.2rem",
                     maxHeight: "4.2rem",
                     whiteSpace: "normal",
                     "& p": { margin: 0 },

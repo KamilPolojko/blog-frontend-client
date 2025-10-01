@@ -16,8 +16,7 @@ export const useRemoveLike = () => {
         mutationKey: ['removeLike'],
         mutationFn: async ({ articleId, userId }: LikePayload) => {
             const { data } = await api.delete(API_ROUTES.ARTICLES.REMOVE_LIKE, {
-                data: { articleId, userId },
-                withCredentials: true,
+                data: { articleId, userId }
             });
             return data;
         },

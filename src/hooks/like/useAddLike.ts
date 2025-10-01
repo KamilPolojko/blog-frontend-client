@@ -15,7 +15,7 @@ export const useLikeArticle = () => {
     return useMutation({
         mutationKey: ['likeArticle'],
         mutationFn: async ({ articleId, userId }: LikePayload) => {
-            const { data } = await api.post(API_ROUTES.ARTICLES.ADD_LIKE, { articleId, userId }, { withCredentials: true });
+            const { data } = await api.post(API_ROUTES.ARTICLES.ADD_LIKE, { articleId, userId });
             return data;
         },
         onMutate: async ({ articleId }) => {

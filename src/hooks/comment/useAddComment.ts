@@ -9,7 +9,7 @@ export const useAddComment = () => {
         mutationFn: async ({ articleId, userId, content, parentId }: { articleId: string; userId: string, content: string, parentId?: string }) => {
             const { data } = await api.post(
                 API_ROUTES.COMMENTS.ADD_COMMENT,
-                { articleId, userId, content, parentId }
+                { articleId, userId, content, parentId, },
             );
             return data;
         },

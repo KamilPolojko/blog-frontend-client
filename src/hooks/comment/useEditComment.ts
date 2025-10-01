@@ -9,7 +9,7 @@ export const useEditComment = () => {
         mutationFn: async ({ commentId, content }: { commentId: string, content: string }) => {
             const { data } = await api.put(
                 API_ROUTES.COMMENTS.EDIT_COMMENT,
-                { commentId, content }
+                { commentId, content },
             );
             return data;
         },

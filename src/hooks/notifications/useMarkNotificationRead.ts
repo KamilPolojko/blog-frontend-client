@@ -9,7 +9,7 @@ export const useMarkNotificationRead = () => {
 
     const mutation = useMutation({
         mutationFn: async (id: string) => {
-            await api.patch(API_ROUTES.NOTIFICATIONS.MARK_NOTIFICATION(id), {}, { withCredentials: true });
+            await api.patch(API_ROUTES.NOTIFICATIONS.MARK_NOTIFICATION(id), {});
         },
         onMutate: async (id: string) => {
             await qc.cancelQueries({ queryKey: ['notifications']});
