@@ -247,5 +247,3 @@ The project leverages Vercel's native Next.js support for optimal performance wi
 - **⭐ Article & Creator Reviews** - Rating system and reviews for content and authors
 - **📈 Advanced Analytics Dashboard** - Creator insights and user behavior tracking
 - **🔔 Enhanced Notifications** - Smart alerts for new content from followed creators, real-time alerts for new followers
-
-//TODO RANO NAPRAWIĆ EDYTOWANIE ARTYKUŁU NA PRODUKCJI , TWORZENIE CHYBA TEZ?? oraz zwiększyć infinity query z 8 na 10
