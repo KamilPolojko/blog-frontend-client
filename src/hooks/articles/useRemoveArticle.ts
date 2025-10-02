@@ -8,16 +8,19 @@ export const useRemoveArticle = () => {
     return useMutation({
         mutationFn: async (articleId: string) => {
             const { data } = await api.delete(API_ROUTES.ARTICLES.REMOVE_ARTICLE(articleId),{
-                headers: { 'Content-Type': 'multipart/form-data' },
-                withCredentials: true,
+                headers: { 'Content-Type': 'multipart/form-data' }
             });
             return data;
         },
         onSuccess: (_, articleId) => {
             queryClient.invalidateQueries({ queryKey: ['articles'] });
-            queryClient.invalidateQueries({ queryKey: ['"clientCreatedArticles"'] });
+            // Fix wrong key quoting to ensure list invalidates
+            queryClient.invalidateQueries({ queryKey: ['clientCreatedArticles'] });
             queryClient.invalidateQueries({ queryKey: ['article', articleId] });
             queryClient.invalidateQueries({ queryKey: ['me'] });
+            // Force refetch active list queries for immediate UI update
+            queryClient.refetchQueries({ queryKey: ['articles'], type: 'active' });
+            queryClient.refetchQueries({ queryKey: ['clientCreatedArticles'], type: 'active' });
         },
     });
 };

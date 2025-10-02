@@ -60,7 +60,11 @@ export default function EditArticlePage() {
         formData.append("isActive", data.isActive.toString());
         formData.append("readingTime", data.readingTime.toString());
         formData.append("createdAt", data.createdAt?.toISOString());
-
+        console.log("DATA", data);
+        console.log('=== FORM DATA ENTRIES ===');
+        for (let [key, value] of formData.entries()) {
+            console.log(key, ':', value);
+        }
         updateArticle(formData);
     };
 

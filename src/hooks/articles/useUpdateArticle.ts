@@ -8,6 +8,10 @@ export const useUpdateArticle = () => {
     return useMutation({
         mutationKey: ['articleUpdate'],
         mutationFn: async (data: FormData) => {
+            console.log('=== EDIT ARTICLE FORM DATA ===');
+            for (let [key, value] of data.entries()) {
+                console.log(key, ':', value);
+            }
             const res = await api.patch(API_ROUTES.ARTICLES.UPDATE_ARTICLE, data, {
                 headers: {
                     "Content-Type": "multipart/form-data",
