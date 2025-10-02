@@ -57,22 +57,25 @@ A modern, high-performance blog frontend built with Next.js 14 and TypeScript, f
 - **Image Optimization:** Next.js Image component with lazy loading and responsive breakpoints
 - **Code Splitting:** Automatic bundle splitting with Next.js App Router for faster initial loads
 - **Efficient Caching:** TanStack Query with aggressive caching strategies and background updates
-
+- 
 ## 📁 Project Structure
 
-src/
-├── app/                    # Next.js App Router pages
-├── components/             # Reusable React components
-├── hooks/                  # Custom React hooks
-├── lib/                    # Configuration files
-├── styles/                 # Global styles and theme
-├── types/                  # TypeScript type definitions
-├── utils/                  # Utility functions
-└── locales/                # Translation files
+- `src/`
+   - `app/`                    # Next.js App Router pages
+   - `components/`             # Reusable React components
+   - `constants/`              # Application constants and configuration
+   - `context/`                # React Context providers
+   - `hooks/`                  # Custom React hooks
+   - `lib/`                    # Configuration files
+   - `routes/`                 # Route definitions and navigation
+   - `styles/`                 # Global styles and theme
+   - `types/`                  # TypeScript type definitions
+   - `utils/`                  # Utility functions
+   - `locales/`                # Translation files
 
 ## 💡 Code Examples
 
-**Custom Hook - Data Fetching with Tanstack Query: **
+**Custom Hook - Data Fetching with Tanstack Query:**
 
 ```typescript
 export const useGetArticlesCreatedByClient = ({
