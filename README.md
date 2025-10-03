@@ -13,12 +13,20 @@ A modern, high-performance blog frontend built with Next.js 14 and TypeScript, f
 ### Key Functionalities Showcase:
 
 - **📝 Rich Article Editor** - Full WYSIWYG editor with image uploads and formatting
-- **💬 Real-Time Comments** - Live comment system with nested replies
+- **⚡ Instant Interactions** - Likes, saves, and follows without page refresh
 - **🔔 Live Notifications** - Instant notifications for user interactions
 - **🌍 Multi-language Support** - Internationalization with language detection
 - **📱 Responsive Design** - Seamless experience across all devices
-- **⚡ Instant Interactions** - Likes, saves, and follows without page refresh
-- **🎯 Advanced Search** - Filter articles by categories, tags, and popularity
+- **👤 User Dashboard**
+  - **⚙️ Account Settings** 
+  - **💾 Saved Articles**
+  - **📊 My Articles**
+- **🧭 Navigation & Layout**
+  - **🏠 Homepage** - 
+  - **📑 Categories** -
+  - **ℹ️ About Us** -
+  - **📞 Contact Us** -
+- **🎯 Advanced Search** - Filter articles by categories, title, users by their username, tags 
 - **🔐 Secure Authentication** - JWT-based login with persistent sessions
 
 [👉 Explore Live Demo](https://blog-frontend-client.vercel.app)

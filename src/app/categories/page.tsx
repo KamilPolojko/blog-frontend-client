@@ -28,7 +28,7 @@ export default function Categories() {
     }, [searchParams]);
 
     const { data: articles, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =
-        useInfiniteArticles(8, 'createdAt', 'DESC', selectedCategories);
+        useInfiniteArticles(10, 'createdAt', 'DESC', selectedCategories);
 
     const allArticles = useMemo(() =>
             articles?.pages.flatMap(page => page.articles) ?? []
