@@ -12,22 +12,22 @@ A modern, high-performance blog frontend built with Next.js 14 and TypeScript, f
 
 ### Key Functionalities Showcase:
 
-- **📝 Rich Article Editor** - Full WYSIWYG editor with image uploads and formatting
-- **⚡ Instant Interactions** - Likes, saves, and follows without page refresh
-- **🔔 Live Notifications** - Instant notifications for user interactions
-- **🌍 Multi-language Support** - Internationalization with language detection
-- **📱 Responsive Design** - Seamless experience across all devices
+- **📝 Rich Article Editor** - ![Rich Text Editor](/assets/demo/RichArticleEditor.gif)
+- **⚡ Instant Interactions** - ![Instant Interactions](/assets/demo/InstantInteractions.gif)
+- **🔔 Live Notifications** - ![Live Notifications](/assets/demo/LiveNotification.gif)
+- **🌍 Multi-language Support** - ![Multi Language Support](/assets/demo/MultiLanguageSupport.gif)
+- **📱 Responsive Design** - ![Responsive Design](/assets/demo/responsiveDesign.gif)
 - **👤 User Dashboard**
-  - **⚙️ Account Settings** 
-  - **💾 Saved Articles**
-  - **📊 My Articles**
+  - **⚙️ Account Settings** - ![Account Settings](/assets/demo/AccountSettings.gif)
+  - **💾 Saved Articles** - ![Saved Articles](/assets/demo/SavedArtiicles.gif)
+  - **📊 My Articles** - ![My Articles](/assets/demo/MyArticles.gif)
 - **🧭 Navigation & Layout**
-  - **🏠 Homepage** - 
-  - **📑 Categories** -
-  - **ℹ️ About Us** -
-  - **📞 Contact Us** -
-- **🎯 Advanced Search** - Filter articles by categories, title, users by their username, tags 
-- **🔐 Secure Authentication** - JWT-based login with persistent sessions
+  - **🏠 Homepage** - ![Homepage](/assets/demo/HomePage.gif)
+  - **📑 Categories** - ![Categories](/assets/demo/Categories.gif)
+  - **ℹ️ About Us** - ![About Us](/assets/demo/AboutUs.png)
+  - **📞 Contact Us** - ![Contact Us](/assets/demo/ContactUs.gif)
+- **🎯 Advanced Search** - ![Advanced Search](/assets/demo/AdvancedSearch.gif)
+- **🔐 Secure Authentication** - ![Secure Authentication](/assets/demo/SecureAuthentication.gif)
 
 [👉 Explore Live Demo](https://blog-frontend-client.vercel.app)
 
