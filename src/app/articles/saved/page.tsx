@@ -21,7 +21,7 @@ export default function MinePage() {
         fetchNextPage,
         hasNextPage,
         isFetchingNextPage,
-    } = useGetSavedArticles(user?.id, 8);
+    } = useGetSavedArticles(user?.id, 10);
 
 
     if (isLoading) {
