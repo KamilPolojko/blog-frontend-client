@@ -110,7 +110,12 @@ export const SearchBar = ({ onResultSelect, placeholder }: SearchBarProps) => {
                     />
                 </Search>
                 {isOpen && (
-                    <DropdownPaper>
+                    <DropdownPaper
+                        sx={{
+                            maxHeight: '400px',
+                            overflowY: 'auto',
+                        }}
+                    >
                         {isLoading && debouncedTerm ? (
                             <Box display="flex" justifyContent="center" p={3}>
                                 <CustomCircularProgress size={24} />
